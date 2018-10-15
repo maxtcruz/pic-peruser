@@ -1,0 +1,22 @@
+.photo {
+    font-size: 12px;
+    color: gray;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.photo img {
+    cursor: pointer;
+}
+
+.photo p {
+    margin-top: 5px;
+}
+
+.photo a:link {
+    color: gray;
+}
+
+.photo a:visited {
+    color: gray;
+}

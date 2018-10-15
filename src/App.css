@@ -1,3 +1,9 @@
-.App {
+.app {
   text-align: center;
+}
+
+.app h1 {
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 30px;
 }
