@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './Photo.css';
 
 export default class Photo extends Component {
@@ -9,18 +8,7 @@ export default class Photo extends Component {
         this.state = {
             photoUrl: props.photoUrl,
             username: props.username,
-            downloadUrl: props.downloadUrl,
         }
-    }
-
-    downloadImage() {
-        axios.get(this.state.downloadUrl)
-            .then(result => {
-                window.open(result.data.url);
-            })
-            .catch(error => {
-                alert(error.response.data.errors);
-            });
     }
 
     render() {
@@ -29,7 +17,6 @@ export default class Photo extends Component {
         return(
             <div className='photo'>
                 <img 
-                    onClick={this.downloadImage.bind(this)}
                     src={this.state.photoUrl} 
                     alt='error while loading.'
                 />

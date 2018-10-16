@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Photo from '../Photo/Photo'
+import RefreshButton from '../RefreshButton/RefreshButton';
 import { Config } from '../../Config';
 import './PhotoStream.css';
 
@@ -28,12 +29,12 @@ export default class PhotoStream extends Component {
     render() {
         return(
             <div className='photoStream'>
+                <RefreshButton clickHandler={this.componentDidMount.bind(this)} />
                 {this.state.photos.map(photo => {
                     return <Photo 
                         key={photo.id}
                         photoUrl={photo.urls.small} 
                         username={photo.user.username} 
-                        downloadUrl={photo.links.download_location}
                         />
                 })}
             </div>
